@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="atoacss.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="card">
+        <!-- EDITÁVEL: Altere a pergunta aqui -->
+        <h1>JBaker algum dia da semana?</h1>
+
+        <div class="buttons">
+            <!-- EDITÁVEL: Troque o link do "href" para onde quiser enviar a pessoa -->
+            <!-- target="_blank" faz abrir em uma nova aba -->
+            <a href="" target="_blank" class="btn-yes"><button type="button" class="btn">Sim</button></a>
+            <button type="button" class="btn-no" id="btnNo">Booh, nada a ver</button>
+            
+        </div>
+    </div>
+
+    <script>
+        const btnNo = document.getElementById('btnNo');
+
+        // Função que gera posições aleatórias para o botão "Não"
+        function fugir() {
+            // Muda a posição para fixa em relação à tela inteira
+            btnNo.style.position = 'fixed';
+
+            // Calcula limites da tela para o botão não sumir
+            const larguraTela = window.innerWidth - btnNo.offsetWidth;
+            const alturaTela = window.innerHeight - btnNo.offsetHeight;
+
+            // Gera coordenadas X e Y aleatórias
+            const novoX = Math.floor(Math.random() * larguraTela);
+            const novoY = Math.floor(Math.random() * alturaTela);
+
+            // Aplica as novas posições
+            btnNo.style.left = `${novoX}px`;
+            btnNo.style.top = `${novoY}px`;
+        }
+
+        // Funciona ao passar o mouse (Computador)
+        btnNo.addEventListener('mouseover', fugir);
+
+        // Funciona ao tocar na tela (Celular / Tablet)
+        btnNo.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Impede o clique no celular
+            fugir();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
