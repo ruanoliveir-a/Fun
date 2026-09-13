@@ -11,18 +11,22 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: url(hello.jpeg);
 }
-
+h1 {
+    font-family:  'Brush Script MT', cursive;
+}
 .card {
     background-color: #ffffff;
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-align: center;
     max-width: 400px;
     width: 90%;
+    border: 5px solid #d8829d3f; /* Borda rosa combinando com a Hello Kitty */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra leve para dar destaque */
 }
 
 h1 {
@@ -51,10 +55,10 @@ h1 {
 
 /* Botão SIM */
 .btn-yes {
-    background-color: #2aa346;
+    background-color: #2aa346f6;
+    color: #ffffff;
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
-    color: #ffffff;
     display: inline-block;
 }
 
@@ -64,7 +68,7 @@ h1 {
 
 /* Botão NÃO */
 .btn-no {
-    background-color: #dc3545;
+    background-color: #dc3546;
     border-radius: 10px;
     color: white;
     padding: 5px 10px 5px 10px;
